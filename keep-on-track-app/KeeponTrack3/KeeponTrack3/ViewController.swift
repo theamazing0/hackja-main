@@ -14,7 +14,41 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
             
-        
+        var host = "10.0.0.2:5000/getEvents"
+        var running = True
+
+        while running == True(
+            if let url = URL(string: host) {
+            URLSession.shared.dataTask(with: url) { (data:Data?, response:URLResponse?, error:Error?) in
+                if error == nil {
+                    if data != nil {
+                        if let json = try? JSONSerialization.jsonObject(with: data!, options: []) as? [String:Double] {
+                            DispatchQueue.main.async {
+                                
+                                if let usdPrice = json["USD"] {
+                                    self.usdLabel.text = self.getStringFor(price: usdPrice, currencyCode: "USD")
+                                    UserDefaults.standard.set(self.getStringFor(price: usdPrice, currencyCode: "USD") + "~", forKey: "USD")
+                                }
+                                if let eurPrice = json["EUR"] {
+                                    self.eurLabel.text = self.getStringFor(price: eurPrice, currencyCode: "EUR")
+                                    UserDefaults.standard.set(self.getStringFor(price: eurPrice, currencyCode: "EUR") + "~", forKey: "EUR")
+                                }
+                                if let jpyPrice = json["JPY"] {
+                                    self.jpyLabel.text = self.getStringFor(price: jpyPrice, currencyCode: "JPY")
+                                    UserDefaults.standard.set(self.getStringFor(price: jpyPrice, currencyCode: "JPY") + "~", forKey: "JPY")
+                                }
+                                
+                            }
+                        }
+                    }
+                    
+                    
+                } else {
+                    print("We have an error")
+                }
+            }.resume()
+        }
+        )
         
         // 1
         let eventStore = EKEventStore()
