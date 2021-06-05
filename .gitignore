@@ -228,5 +228,4 @@ fastlane/test_output
 
 iOSInjectionProject/
 
-# Database Files
 events.db
