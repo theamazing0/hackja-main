@@ -1,3 +1,6 @@
+
+#! Run This File To Generate A Database Structure, REQUIRED TO RUN THE SERVER
+
 import sqlite3 as sql
 
 conn = sql.connect('database/events.db')
