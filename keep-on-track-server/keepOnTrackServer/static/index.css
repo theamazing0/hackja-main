@@ -1,0 +1,16 @@
+body {
+    background-image: url("background.gif");
+    background-repeat: no-repeat;
+    background-attachment: fixed; 
+    background-size: cover;
+}
+
+.cardWrapper {
+    width: 75%;
+    margin: auto;
+    height: 75%;
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-50%) translateX(50%);
+    transform: translateY(-50%) translateX(50%)
+}

@@ -1,1 +1,69 @@
 <!DOCTYPE html>
+<html>
+
+    <body>
+
+        <head>
+            <!--* JS -->
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+            <script src="{{url_for('static', filename='index.js')}}"></script>
+
+            <!--* CSS -->
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+            <link rel="stylesheet"
+                href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+            <link rel="stylesheet" href="{{url_for('static', filename='index.css')}}">
+
+        </head>
+
+        <body>
+            <!-- Nav Bar -->
+            <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+
+                <!-- Links -->
+                <ul class="navbar-nav">
+                    <a class="navbar-brand" href="/">Keep On Track</a>
+                </ul>
+
+            </nav>
+
+            <!-- <br>
+            <br>
+            <br>
+            <br>
+            <br> -->
+
+            <div class="card cardWrapper shadow-lg p-3 mb-5 bg-dark rounded w-50">
+                <div class="card-body">
+                    <h1 class="card-title text-center text-success">Welcome Teacher!</h1>
+                    <h5 class="card-subtitle text-center mb-2 text-white">Enter
+                        In Your Meeting Info Below:</h5>
+                    <label class="card-text text-light">Name</label>
+                    <input class="form-control" id="eventnameinput" type="text">
+                    <br>
+                    <label class="card-text text-light">Link</label>
+                    <input class="form-control" id="eventlinkinput" type="text">
+                    <br>
+                    <label class="card-text text-light">Start Time</label>
+                    <input class="form-control" id="eventstarttimeinput" type="time">
+                    <br>
+                    <p class="lead">
+                        <button class="btn btn-lg btn-outline-success" role="eventsend" >Send!</button>
+                    </p>
+
+                    <label class="control-label text-info" id = "createSubmissionBox"></label>
+
+                </div>
+
+            </div>
+
+            </div>
+
+
+            </div>
+            </div>
+        </body>
+
+</html>
