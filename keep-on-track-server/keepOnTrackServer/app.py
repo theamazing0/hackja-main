@@ -42,6 +42,23 @@ def createevent(methods=['GET', 'POST']):
 
     return 'thisreturnstatementdoesntmatter'
 
+@app.route('/getEvents')
+def getEvents(methods=['GET', 'POST']):
+    conn = sqlite3.connect('database/events.db')
+    cursor = conn.execute("SELECT id, name, link, starttime from EVENTS")
+
+    jsonSerializableEvents = []
+
+    for eventRow in cursor:
+            jsonSerializableEvents.append(eventRow)
+
+    dumpedEvents = json.dumps(jsonSerializableEvents)
+    loadedEvents = json.loads(dumpedEvents)
+
+    conn.close()
+
+    return str(loadedEvents)
+
 
 if __name__ == '__main__':
     # ! Remove debug = True after development
